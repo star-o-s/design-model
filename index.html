@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+    <title>Site4U!</title>
+	<style>
+		.gallery {
+			column-count: 3;
+			column-gap: 1em;
+		}
+		.gallery img {
+			width: 100%;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			break-inside: avoid;
+			border-radius: 8px;
+		}
+		@media (max-width: 768px) {
+			.gallery {
+				column-count: 2;
+			}
+		}
+		@media (max-width: 480px) {
+			.gallery {
+ 			   column-count: 1;
+		   }
+	   }
+	   .text {
+		   color: white;
+		   background-color: gray;
+		   border-radius: 8px;
+		   padding: 5px;
+		   /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+	   }
+	   .item {
+	     break-inside: avoid;
+	     display: block;
+	   }
+	   .item img {
+	   	/*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+	   }
+	   .front {
+	     position: relative;
+	     overflow: hidden;
+		 height: 300px;
+		 border-radius: 8px;
+		 margin-top: 1em;
+		 margin-bottom: 1em;
+		 color: white;
+		 text-align: center;
+	   }
+
+	   .front::before {
+	     content: "";
+	     position: absolute;
+	     top: 0; left: 0;
+	     width: 200%;
+	     height: 200%;
+	     background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+	     background-size: 400% 400%;
+	     animation: gradientMove 10s ease infinite;
+	     z-index: 0;
+	     border-radius: 8px;
+	   }
+
+	   .front .textfront {
+	     position: relative;
+	     z-index: 1;
+		 padding: 20px;
+	   }
+
+	   @keyframes gradientMove {
+	     0% { background-position: 0% 50%; }
+	     50% { background-position: 100% 50%; }
+	     100% { background-position: 0% 50%; }
+	   }
+	   .textname {
+  	     position: relative;
+  	     z-index: 1;
+  		 padding: 20px;
+  		background: linear-gradient(to right, #ffff00, #ff0000); /* Degradado */
+  		-webkit-background-clip: text;
+  		color: transparent;
+  		background-clip: text;
+		font-family: 'Kokonor';
+		
+		font-size: 2em;
+	   }
+	   .title {
+		   background-color: ;
+		   border-radius: 8px;
+		   padding: 5px;
+		   background: linear-gradient(-45deg, #A734E4, #fff, #E434D0, #fff);
+		         background-size: 400% 400%;
+		         animation: gradientMove 15s ease infinite;
+				/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+		       }
+
+		       @keyframes gradientMove {
+		         0% {
+		           background-position: 0% 50%;
+		         }
+		         50% {
+		           background-position: 100% 50%;
+		         }
+		         100% {
+		           background-position: 0% 50%;
+		         }
+				 
+		       }
+	   .title h1{
+		   text-align: center;
+ 	      display: flex;
+ 	      justify-content: center;
+ 	      align-items: center;
+ 	      font-family: sans-serif;
+		  margin: 50px;
+  		/*background: linear-gradient(to right, #ffff00, #ff0000); /* Degradado */
+  		/*-webkit-background-clip: text;
+  		color: transparent;
+  		background-clip: text;*/
+		color: #FFD700; /* Equivale a 'gold' */
+		text-shadow: 0 0 30px rgba(200, 116, 0, 0.5);
+		
+		
+		
+		font-size: 3em;
+		/*      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+		      background-size: 800% 800%;
+		      -webkit-background-clip: text;
+		      -webkit-text-fill-color: transparent;
+		      background-clip: text;
+		      color: transparent;
+		      animation: moverDegradado 10s ease infinite;
+	   }
+	   @keyframes moverDegradado {
+	         0% { background-position: 0% 50%; }
+	         50% { background-position: 100% 50%; }
+	         100% { background-position: 0% 50%; }
+	     */  }
+	   .title h2 {
+		color: white;
+		font-size: 1em;
+	   text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+	  margin: 50px;
+	  text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	   }
+	   .name {
+   		color: #FFD700; /* Equivale a 'gold' */
+   		text-shadow: 0 0 30px rgba(200, 116, 0, 0.5);
+		   margin: 50px;
+		   font-size: 3em;
+	   }
+	   .head {
+		   background-color: ;
+		   border-radius: 8px;
+		   padding: 5px;
+		   background: linear-gradient(135deg, #fff, #E434D0, #fff, #A734E4, #fff);
+		         background-size: 400% 400%;
+		         animation: gradientMove 15s ease infinite;
+				/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+				display: flex;
+				  justify-content: space-between; /* Coloca un div a la izquierda y otro a la derecha */
+				  align-items: center;
+		       }
+
+		       @keyframes gradientMove {
+		         0% {
+		           background-position: 0% 50%;
+		         }
+		         50% {
+		           background-position: 100% 50%;
+		         }
+		         100% {
+		           background-position: 0% 50%;
+		         }
+				 
+		       }
+	   }
+	   
+	   .home {
+		   display: flex;
+		     gap: 1rem;
+		     flex-wrap: wrap;
+	   }
+	   .signin {
+   		text-shadow: 30px rgba(0, 0, 0, 0.5);
+		box-shadow: 30px rgba(0, 0, 0, 0.5);
+		   margin-left: auto;          /* Empuja a la derecha si está en un flex container */
+		   font-size: 14px;
+		   
+		   margin-right: 50px;          /* Empuja a la derecha si está en un flex container */
+		     border: 2px solid white;    /* Borde blanco de 2px */
+		     border-radius: 8px;         /* Bordes redondeados */
+		     padding: 6px 12px;          /* Espaciado interno */
+		     color: white;               /* Texto blanco */
+		     cursor: pointer;
+			 white-space: nowrap;
+	   }
+	   .signup {
+   		text-shadow: 30px rgba(0, 0, 0, 0.5);
+		box-shadow: 30px rgba(0, 0, 0, 0.5);
+		   margin-left: auto;          /* Empuja a la derecha si está en un flex container */
+		   font-size: 14px;
+		   
+		   margin-right: 50px;          /* Empuja a la derecha si está en un flex container */
+		     border: 2px solid white;    /* Borde blanco de 2px */
+		     border-radius: 8px;         /* Bordes redondeados */
+		     padding: 6px 12px;          /* Espaciado interno */
+		     color: white;               /* Texto blanco */
+		     cursor: pointer;
+			 white-space: nowrap;
+	   }
+	   
+	   /* 📱 Tamaño más pequeño en móviles */
+	   @media (max-width: 600px) {
+	     .signin {
+	       font-size: 0.9rem;
+	       padding: 0.5rem;
+		   
+	     }
+	     .signup {
+	       font-size: 0.9rem;
+	       padding: 0.5rem;
+		   
+	     }
+	   }
+	  
+	   </style>
+	   <div class="head">
+	   		<div class="name">SITE4U!</div>
+			<div class="home">
+				<!--<div class="signin">Sign In</div>
+				<br><div class="signup">Sign Up</div>-->
+			</div>
+	   </div>
+	  <!-- <div class="title">
+		   <h1>Anna</h1>
+		   <h2>Your Status.</h2>
+	   </div>-->
+	   <div class="gallery">
+		    <?php include 'bloques.php'; ?>
+		  <!-- <div class="front">
+			   <br><br>
+			 <div class="textname">Bella Angel Madrid</div>  
+		     <div class="textfront">Me llamo Bella, soy una preciosa modelo ucraniana. Me caracteriza mi juventud, elegancia, inteligencia, seriedad y discreción.</div>
+		   </div>-->
+   		  
+		     <div class="item">
+				 
+    				 <img src="telaraña.png" class="main-img" />
+    				 
+  			   
+		   <div class="text">Telaraña</div>
+		   
+		   </div>
+		     <div class="item">
+		   <img src="lunatico.png" />
+		   <div class="text">Cielo</div>
+		   </div>
+		     <div class="item">
+		   <img src="oja.png" />
+		   <div class="text">Oja</div>
+		   </div>
+		     <div class="item">
+		   <img src="cielo2.png" />
+		   <div class="text">Cielo 2</div>
+		   </div>
+   		     <div class="item">
+   		   <img src="flor.png" />
+   		   <div class="text">Flor</div>
+   		   </div>
+		     <div class="item">
+		   <img src="campo.png" />
+		   <div class="text">Campo</div>
+		   </div>
+		     <div class="item">
+		   <img src="espada.png" />
+		   <div class="text">Espada</div>
+		   </div>
+		   
+	   </div>
+	</body>
+	<script>
+	  window.addEventListener('load', () => {
+	    const colorThief = new ColorThief();
+	    const items = document.querySelectorAll('.item');
+
+	    items.forEach(item => {
+	      const img = item.querySelector('img');
+	      const text = item.querySelector('.text');
+
+	      if (img.complete) {
+	        applyColor();
+	      } else {
+	        img.addEventListener('load', applyColor);
+	      }
+
+	      function applyColor() {
+	        try {
+	          const color = colorThief.getColor(img);
+	          const [r, g, b] = color;
+
+	          // Asigna el color de fondo
+	          text.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+	          // Calcula la luminancia relativa (fórmula estándar)
+	          const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+
+	          // Si la luminancia es baja, usa texto blanco; si es alta, usa texto negro
+	          text.style.color = luminance < 128 ? '#ffffff' : '#000000';
+	        } catch (e) {
+	          console.log('Error leyendo color de la imagen', e);
+	        }
+	      }
+	    });
+	  });
+	</script>
+</html>
