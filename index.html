@@ -6,6 +6,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
     <title>Site4U!</title>
 	<style>
+		body {
+ 		   background: linear-gradient(135deg, #fff, #E434D0, #fff, #A734E4, #fff);
+ 		         background-size: 400% 400%;
+ 		         animation: gradientMove 15s ease infinite;
+ 				/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+ 				display: flex;
+ 				  justify-content: space-between; /* Coloca un div a la izquierda y otro a la derecha */
+ 				  align-items: center;
+		}
 		.gallery {
 			column-count: 3;
 			column-gap: 1em;
@@ -233,17 +242,7 @@
 	   }
 	  
 	   </style>
-	   <div class="head">
-	   		<div class="name">SITE4U!</div>
-			<div class="home">
-				<!--<div class="signin">Sign In</div>
-				<br><div class="signup">Sign Up</div>-->
-			</div>
-	   </div>
-	  <!-- <div class="title">
-		   <h1>Anna</h1>
-		   <h2>Your Status.</h2>
-	   </div>-->
+	  
 	   <div class="gallery">
 		    <?php include 'bloques.php'; ?>
 		  <!-- <div class="front">
@@ -261,7 +260,7 @@
 		   
 		   </div>
 		     <div class="item">
-		   <img src="lunatico.png" />
+		   <img src="cielo.png" />
 		   <div class="text">Cielo</div>
 		   </div>
 		     <div class="item">
