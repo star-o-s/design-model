@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Galería Animada Scroll</title>
+  <title>Design Models</title>
   <style>
     body {
 		
@@ -90,35 +90,6 @@
 
     images.forEach(img => observer.observe(img));
   </script>
-	
-	<script>
-	  function handleOrientationChange() {
-	    const orientation = window.orientation;
-
-	    if (orientation === 0) {
-	      // Portrait normal (móvil recto)
-	      window.scrollTo({
-	        top: document.body.scrollHeight,
-	        behavior: "smooth"
-	      });
-	    } else if (orientation === 180) {
-	      // Portrait invertido (móvil cabeza abajo)
-	      window.scrollTo({
-	        top: 0,
-	        behavior: "smooth"
-	      });
-	    }
-	  }
-
-	  window.addEventListener("orientationchange", () => {
-	    setTimeout(handleOrientationChange, 300);
-	  });
-
-	  // También al cargar
-	  window.addEventListener("load", () => {
-	    setTimeout(handleOrientationChange, 300);
-	  });
-	</script>
 
 </body>
 </html>
