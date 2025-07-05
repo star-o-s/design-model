@@ -90,6 +90,29 @@
 
     images.forEach(img => observer.observe(img));
   </script>
+	
+	<script>
+	  // Detectar cambio de orientación
+	  window.addEventListener("orientationchange", () => {
+	    // Esperamos un poco a que el contenido se reacomode
+	    setTimeout(() => {
+	      window.scrollTo({
+	        top: document.body.scrollHeight,
+	        behavior: "smooth"
+	      });
+	    }, 300); // Espera para evitar salto brusco
+	  });
+
+	  // También detectamos la orientación al cargar
+	  window.addEventListener("load", () => {
+	    if (window.matchMedia("(orientation: landscape)").matches) {
+	      window.scrollTo({
+	        top: document.body.scrollHeight,
+	        behavior: "smooth"
+	      });
+	    }
+	  });
+	</script>
 
 </body>
 </html>
