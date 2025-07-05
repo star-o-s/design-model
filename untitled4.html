@@ -92,25 +92,31 @@
   </script>
 	
 	<script>
-	  // Detectar cambio de orientación
-	  window.addEventListener("orientationchange", () => {
-	    // Esperamos un poco a que el contenido se reacomode
-	    setTimeout(() => {
+	  function handleOrientationChange() {
+	    const orientation = window.orientation;
+
+	    if (orientation === 0) {
+	      // Portrait normal (móvil recto)
 	      window.scrollTo({
 	        top: document.body.scrollHeight,
 	        behavior: "smooth"
 	      });
-	    }, 300); // Espera para evitar salto brusco
-	  });
-
-	  // También detectamos la orientación al cargar
-	  window.addEventListener("load", () => {
-	    if (window.matchMedia("(orientation: landscape)").matches) {
+	    } else if (orientation === 180) {
+	      // Portrait invertido (móvil cabeza abajo)
 	      window.scrollTo({
-	        top: document.body.scrollHeight,
+	        top: 0,
 	        behavior: "smooth"
 	      });
 	    }
+	  }
+
+	  window.addEventListener("orientationchange", () => {
+	    setTimeout(handleOrientationChange, 300);
+	  });
+
+	  // También al cargar
+	  window.addEventListener("load", () => {
+	    setTimeout(handleOrientationChange, 300);
 	  });
 	</script>
 
