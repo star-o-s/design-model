@@ -1,321 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
-    <title>Site4U!</title>
-	<style>
-		body {
- 		   background: linear-gradient(135deg, #fff, #B0B0B0, #fff, #B0B0B0, #fff);
- 		         background-size: 400% 400%;
- 		         animation: gradientMove 15s ease infinite;
- 				/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
- 				display: flex;
- 				  justify-content: space-between; /* Coloca un div a la izquierda y otro a la derecha */
- 				  align-items: center;
-		}
-		.gallery {
-			column-count: 3;
-			column-gap: 1em;
-		}
-		.gallery img {
-			width: 100%;
-			margin-top: 1em;
-			margin-bottom: 1em;
-			break-inside: avoid;
-			border-radius: 8px;
-		}
-		@media (max-width: 768px) {
-			.gallery {
-				column-count: 2;
-			}
-		}
-		@media (max-width: 480px) {
-			.gallery {
- 			   column-count: 1;
-		   }
-	   }
-	   .text {
-		   color: white;
-		   background-color: gray;
-		   border-radius: 8px;
-		   padding: 5px;
-		   /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
-	   }
-	   .item {
-	     break-inside: avoid;
-	     display: block;
-		 box-shadow: 30px rgba(0, 0, 0, 0.5);
-	   }
-	   .item img {
-	   	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-	   }
-	   .front {
-	     position: relative;
-	     overflow: hidden;
-		 height: 300px;
-		 border-radius: 8px;
-		 margin-top: 1em;
-		 margin-bottom: 1em;
-		 color: white;
-		 text-align: center;
-	   }
-
-	   .front::before {
-	     content: "";
-	     position: absolute;
-	     top: 0; left: 0;
-	     width: 200%;
-	     height: 200%;
-	     background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
-	     background-size: 400% 400%;
-	     animation: gradientMove 10s ease infinite;
-	     z-index: 0;
-	     border-radius: 8px;
-	   }
-
-	   .front .textfront {
-	     position: relative;
-	     z-index: 1;
-		 padding: 20px;
-	   }
-
-	   @keyframes gradientMove {
-	     0% { background-position: 0% 50%; }
-	     50% { background-position: 100% 50%; }
-	     100% { background-position: 0% 50%; }
-	   }
-	   .textname {
-  	     position: relative;
-  	     z-index: 1;
-  		 padding: 20px;
-  		background: linear-gradient(to right, #ffff00, #ff0000); /* Degradado */
-  		-webkit-background-clip: text;
-  		color: transparent;
-  		background-clip: text;
-		font-family: 'Kokonor';
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Models</title>
+  <style>
+    body {
 		
-		font-size: 2em;
-	   }
-	   .title {
-		   background-color: ;
-		   border-radius: 8px;
-		   padding: 5px;
-		   background: linear-gradient(-45deg, #A734E4, #fff, #E434D0, #fff);
-		         background-size: 400% 400%;
-		         animation: gradientMove 15s ease infinite;
-				/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
-		       }
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: arial, sans-serif;
+   background: #f8f8f8;
+  /* background: linear-gradient(-45deg, #020202, #fff, #f8f8f8);
+   background-size: 400% 400%;
+   animation: gradientMove 20s ease infinite;
+      }
+	
+  	@keyframes gradientMove {
+  	  0% {
+  	    background-position: 0% 50%;
+  	  }
+  	  50% {
+  	    background-position: 100% 50%;
+  	  }
+  	  100% {
+  	    background-position: 0% 50%;
+  	  }
+  	}*/
 
-		       @keyframes gradientMove {
-		         0% {
-		           background-position: 0% 50%;
-		         }
-		         50% {
-		           background-position: 100% 50%;
-		         }
-		         100% {
-		           background-position: 0% 50%;
-		         }
-				 
-		       }
-	   .title h1{
-		   text-align: center;
- 	      display: flex;
- 	      justify-content: center;
- 	      align-items: center;
- 	      font-family: sans-serif;
-		  margin: 50px;
-  		/*background: linear-gradient(to right, #ffff00, #ff0000); /* Degradado */
-  		/*-webkit-background-clip: text;
-  		color: transparent;
-  		background-clip: text;*/
-		color: #FFD700; /* Equivale a 'gold' */
-		text-shadow: 0 0 30px rgba(200, 116, 0, 0.5);
-		
-		
-		
-		font-size: 3em;
-		/*      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15);
-		      background-size: 800% 800%;
-		      -webkit-background-clip: text;
-		      -webkit-text-fill-color: transparent;
-		      background-clip: text;
-		      color: transparent;
-		      animation: moverDegradado 10s ease infinite;
-	   }
-	   @keyframes moverDegradado {
-	         0% { background-position: 0% 50%; }
-	         50% { background-position: 100% 50%; }
-	         100% { background-position: 0% 50%; }
-	     */  }
-	   .title h2 {
-		color: white;
-		font-size: 1em;
-	   text-align: center;
+    h1 {
+      text-align: center;
+      padding: 40px 0 10px;
+      font-size: 2em;
+	  color: #666;
+    }
+	
+    h2 {
+      text-align: center;
+      padding: 5px 0 40px;
+      font-size: 1em;
+	  color: #666;
+    }
+	
+    p {
+      text-align: center;
+      padding: 5px 0 45px;
+      font-size: 1em;
+	  color: #666;
+    }
+
+    .galeria {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      font-family: sans-serif;
-	  margin: 50px;
-	  text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-	   }
-	   .name {
-   		color: #FFD700; /* Equivale a 'gold' */
-   		text-shadow: 0 0 30px rgba(200, 116, 0, 0.5);
-		   margin: 50px;
-		   font-size: 3em;
-	   }
-	   .head {
-		   background-color: ;
-		   border-radius: 8px;
-		   padding: 5px;
-		   background: linear-gradient(135deg, #fff, #E434D0, #fff, #A734E4, #fff);
-		         background-size: 400% 400%;
-		         animation: gradientMove 15s ease infinite;
-				/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
-				display: flex;
-				  justify-content: space-between; /* Coloca un div a la izquierda y otro a la derecha */
-				  align-items: center;
-		       }
+      gap: 60px;
+      padding-bottom: 100px;
+    }
 
-		       @keyframes gradientMove {
-		         0% {
-		           background-position: 0% 50%;
-		         }
-		         50% {
-		           background-position: 100% 50%;
-		         }
-		         100% {
-		           background-position: 0% 50%;
-		         }
-				 
-		       }
-	   }
-	   
-	   .home {
-		   display: flex;
-		     gap: 1rem;
-		     flex-wrap: wrap;
-	   }
-	   .signin {
-   		text-shadow: 30px rgba(0, 0, 0, 0.5);
-		box-shadow: 30px rgba(0, 0, 0, 0.5);
-		   margin-left: auto;          /* Empuja a la derecha si está en un flex container */
-		   font-size: 14px;
-		   
-		   margin-right: 50px;          /* Empuja a la derecha si está en un flex container */
-		     border: 2px solid white;    /* Borde blanco de 2px */
-		     border-radius: 8px;         /* Bordes redondeados */
-		     padding: 6px 12px;          /* Espaciado interno */
-		     color: white;               /* Texto blanco */
-		     cursor: pointer;
-			 white-space: nowrap;
-	   }
-	   .signup {
-   		text-shadow: 30px rgba(0, 0, 0, 0.5);
-		box-shadow: 30px rgba(0, 0, 0, 0.5);
-		   margin-left: auto;          /* Empuja a la derecha si está en un flex container */
-		   font-size: 14px;
-		   
-		   margin-right: 50px;          /* Empuja a la derecha si está en un flex container */
-		     border: 2px solid white;    /* Borde blanco de 2px */
-		     border-radius: 8px;         /* Bordes redondeados */
-		     padding: 6px 12px;          /* Espaciado interno */
-		     color: white;               /* Texto blanco */
-		     cursor: pointer;
-			 white-space: nowrap;
-	   }
-	   
-	   /* 📱 Tamaño más pequeño en móviles */
-	   @media (max-width: 600px) {
-	     .signin {
-	       font-size: 0.9rem;
-	       padding: 0.5rem;
-		   
-	     }
-	     .signup {
-	       font-size: 0.9rem;
-	       padding: 0.5rem;
-		   
-	     }
-	   }
-	  
-	   </style>
-	   
-	  
-	   <div class="gallery">
-		    <?php include 'bloques.php'; ?>
-		  <!-- <div class="front">
-			   <br><br>
-			 <div class="textname">Bella Angel Madrid</div>  
-		     <div class="textfront">Me llamo Bella, soy una preciosa modelo ucraniana. Me caracteriza mi juventud, elegancia, inteligencia, seriedad y discreción.</div>
-		   </div>-->
-   		  
-		     <div class="item">
-				 
-    				 <img src="telaraña.png" class="main-img" />
-    				 
-  			   
-		  
-		   
-		   </div>
-		     <div class="item">
-		   <img src="cielo.png" />
-		   
-		   </div>
-		     <div class="item">
-		   <img src="oja.png" />
-		   </div>
-		     <div class="item">
-		   <img src="cielo2.png" />
-		   </div>
-   		     <div class="item">
-   		   <img src="flor.png" />
-   		   </div>
-		     <div class="item">
-		   <img src="campo.png" />
-		   </div>
-		     <div class="item">
-		   <img src="espada.png" />
-		   </div>
-		   
-	   </div>
-	</body>
-	<script>
-	  window.addEventListener('load', () => {
-	    const colorThief = new ColorThief();
-	    const items = document.querySelectorAll('.item');
+    .imagen {
+      opacity: 0;
+      transform: translateY(80px) scale(0.95);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
 
-	    items.forEach(item => {
-	      const img = item.querySelector('img');
-	      const text = item.querySelector('.text');
+    .imagen.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+	  /*box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); /* sombra más intensa al mostrarse */
+    }
+	
+	
+  </style>
+</head>
+<body>
 
-	      if (img.complete) {
-	        applyColor();
-	      } else {
-	        img.addEventListener('load', applyColor);
-	      }
+  
+<h1>Design Models</h1>
+<h2>By Yuri Ulyanov</h2>
+  <div class="galeria">
+    <img src="model3.png" alt="Diseño 1" class="imagen">
+    <img src="model13.png" alt="Diseño 4" class="imagen">
+    <img src="model1.png" alt="Diseño 4" class="imagen">
+    <img src="model10.png" alt="Diseño 4" class="imagen">
+    <img src="model8.png" alt="Diseño 4" class="imagen">
+    <img src="model12.png" alt="Diseño 4" class="imagen">
+    <!-- Puedes añadir más imágenes -->
+  </div>
+<p>Thanks, I hope you liked it.</p>
+	
 
-	      function applyColor() {
-	        try {
-	          const color = colorThief.getColor(img);
-	          const [r, g, b] = color;
+  <script>
+    const images = document.querySelectorAll('.imagen');
 
-	          // Asigna el color de fondo
-	          text.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    });
 
-	          // Calcula la luminancia relativa (fórmula estándar)
-	          const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+    images.forEach(img => observer.observe(img));
+  </script>
 
-	          // Si la luminancia es baja, usa texto blanco; si es alta, usa texto negro
-	          text.style.color = luminance < 128 ? '#ffffff' : '#000000';
-	        } catch (e) {
-	          console.log('Error leyendo color de la imagen', e);
-	        }
-	      }
-	    });
-	  });
-	</script>
+</body>
 </html>
